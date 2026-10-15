@@ -1,20 +1,58 @@
+<div align="center">
+
+<img src="./public/icon/128.png" width="96" alt="ToolX Logo" />
+
 # ToolX · 开发者工具箱
 
-一个本地运行的开发者工具站，同时提供 **Chrome / Edge 侧边栏扩展**和**独立网页版**。点击插件图标即可在当前浏览器窗口旁使用工具，也可在独立标签页打开完整界面。React + TypeScript 实现共享界面，Vite 构建网站，WXT 构建 Manifest V3 扩展。
+**本地优先的开发者工具集合 —— 既是 Chrome / Edge 侧边栏扩展，也是独立网页版**
 
-## 已实现
+无后端 · 无账号 · 无追踪 · 可离线使用
+
+[![GitHub Stars](https://img.shields.io/github/stars/ChanYanny/toolx?style=flat&color=gold)](https://github.com/ChanYanny/toolx/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ChanYanny/toolx/blob/main/LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/ChanYanny/toolx)
+[![Node](https://img.shields.io/badge/node-%3E%3D22-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![WXT](https://img.shields.io/badge/WXT-MV3-67d55e)](https://wxt.dev)
+[![Chrome](https://img.shields.io/badge/Chrome-116%2B-4285F4?logo=google-chrome&logoColor=white)](https://www.google.com/chrome)
+[![Edge](https://img.shields.io/badge/Edge-supported-0078D7?logo=microsoft-edge&logoColor=white)](https://www.microsoft.com/edge)
+
+</div>
+
+---
+
+## 📖 目录
+
+- [✨ 功能特性](#-功能特性)
+- [🚀 快速开始](#-快速开始)
+- [🧩 安装浏览器扩展](#-安装浏览器扩展)
+- [📦 构建与交付](#-构建与交付)
+- [🔒 数据与权限](#-数据与权限)
+- [✅ 测试与验证](#-测试与验证)
+- [📁 代码结构](#-代码结构)
+- [🤝 参与贡献](#-参与贡献)
+- [📄 开源协议](#-开源协议)
+
+## ✨ 功能特性
+
+点击插件图标即可在当前浏览器窗口旁使用工具，也可在独立标签页打开完整界面。React + TypeScript 实现共享界面，Vite 构建网站，WXT 构建 Manifest V3 扩展。
 
 | 工具 | 功能 |
 | --- | --- |
-| JSON 格式化 | 格式化、压缩、转义 / 去转义、结果回填、排序、缩进、语法高亮；树形折叠、节点搜索、复制路径 / 值、JSONPath 查询；保留大整数和高精度数字 |
-| Base64 编解码 | UTF-8 文本编码 / 解码，支持中文和 Emoji，校验无效输入 |
-| URL 编解码 | 参数值与完整 URL 两种模式，支持反向转换 |
-| 时间戳转换 | 秒 / 毫秒、日期双向转换、本地时区 / UTC、实时当前时间戳 |
-| UUID 生成器 | Crypto API 生成 UUID v4，批量 1–100 个，大小写和连字符设置 |
-| 文本对比 | 逐行差异、新增删除统计、仅显示差异、末尾换行标记 |
-| 正则测试 | JavaScript 正则实时匹配高亮、g/i/m/s/u/y 标志、捕获组与命名组、零宽匹配、替换预览、复制 / 下载，以及邮箱、日期、日志、中文示例 |
+| 🧾 JSON 格式化 | 格式化、压缩、转义 / 去转义、结果回填、排序、缩进、语法高亮；树形折叠、节点搜索、复制路径 / 值、JSONPath 查询；保留大整数和高精度数字 |
+| 🔤 Base64 编解码 | UTF-8 文本编码 / 解码，支持中文和 Emoji，校验无效输入 |
+| 🔗 URL 编解码 | 参数值与完整 URL 两种模式，支持反向转换 |
+| ⏰ 时间戳转换 | 秒 / 毫秒、日期双向转换、本地时区 / UTC、实时当前时间戳 |
+| 🆔 UUID 生成器 | Crypto API 生成 UUID v4，批量 1–100 个，大小写和连字符设置 |
+| 🔍 文本对比 | 逐行差异、新增删除统计、仅显示差异、末尾换行标记 |
+| ✂️ 正则测试 | JavaScript 正则实时匹配高亮、g/i/m/s/u/y 标志、捕获组与命名组、零宽匹配、替换预览、复制 / 下载，以及邮箱、日期、日志、中文示例 |
 
 工具箱还包含分类筛选、关键词搜索、收藏、最近使用、深浅色主题、移动端布局、复制和结果下载。`⌘ K` / `Ctrl K` 打开工具搜索；JSON 和编解码工具支持 `⌘ Enter` / `Ctrl Enter` 运行。
+
+<details>
+<summary><b>展开查看：JSON 工具细节</b></summary>
 
 JSON「转义」将输入文本转换为带外层双引号的 JSON 字符串，处理引号、反斜杠、换行等字符；「去转义」还原一层字符串转义，支持带或不带外层双引号的内容。例如 `{"name":"ToolX"}` 转义为 `"{\"name\":\"ToolX\"}"`，再去转义可得到原文。通过结果区的「回填输入」可连续执行去转义、格式化等操作。
 
@@ -22,11 +60,18 @@ JSON 结果区可切换「文本 / 树形 / JSONPath」。树形视图支持逐�
 
 JSONPath 支持 `$`、`$.name`、`$["a.b"]`、`$['name']`、`$.items[0]`、`[-1]`、`[*]`、`$..name` 和 `$..*`；暂不支持过滤、切片、联合或脚本表达式。点击「查询」或按 Enter 执行，结果统一为数组，可单独复制和下载；结果区顶栏复制 / 下载的是完整 JSON。
 
+</details>
+
+<details>
+<summary><b>展开查看：正则工具细节</b></summary>
+
 正则表达式无需外层 `/ /`，修改后自动测试。点击匹配高亮或切换匹配编号可查看捕获组；位置使用从 0 开始的 UTF-16 索引，结束位置不包含在内。替换支持 `$1`、`$<name>`、`$&`、`$$`、前缀和后缀引用，留空模板表示删除匹配内容，关闭 `g` 时只替换第一处。示例用于演示匹配，不是完整的邮箱或日期校验器。
 
 下拉菜单统一使用本地无衬线字体与深浅色样式，支持方向键选择、Enter 确认和 Esc 关闭，不加载远程字体或资源。
 
-## 本地运行
+</details>
+
+## 🚀 快速开始
 
 需要 **Node.js 22 或更新版本**及 npm。
 
@@ -39,7 +84,7 @@ npm run dev
 
 开发时可用 `http://127.0.0.1:5173/?view=sidepanel` 预览侧边栏界面（建议将窗口缩窄至 320–520px）；浏览器原生停靠行为需要加载扩展体验。
 
-## 安装浏览器扩展
+## 🧩 安装浏览器扩展
 
 ```sh
 npm run build:extension
@@ -53,10 +98,10 @@ npm run build:extension
 
 侧边栏与标签页共享收藏和主题，编辑内容各自保留在页面内存中，不自动跨窗口传递。切换侧栏中的工具、点击旁边网页不会清空当前草稿；关闭或刷新侧栏后草稿不保证保留。
 
-macOS 文件选择器可能隐藏 `.output` 目录。按 `⌘ Shift G`，粘贴完整路径：
+macOS 文件选择器可能隐藏 `.output` 目录。按 `⌘ Shift G`，粘贴项目内的完整路径：
 
 ```text
-/Users/bytedance/study/ToolX/.output/chrome-mv3
+<你的项目目录>/.output/chrome-mv3
 ```
 
 代码更新后重新构建，并在扩展管理页点击 ToolX 的「重新加载」。开发时也可以使用 `npm run dev:extension` 启动 WXT 开发模式。
@@ -65,13 +110,13 @@ macOS 文件选择器可能隐藏 `.output` 目录。按 `⌘ Shift G`，粘贴�
 
 完整工具页不会替换浏览器的新标签页，也无需网页读取权限。扩展要求 Chrome 116+，也面向提供 Side Panel API 的新版桌面 Edge；Firefox 和 Safari 暂未适配验证。
 
-## 构建与交付
+## 📦 构建与交付
 
 ```sh
 npm run build          # 类型检查 + 网页版 + 扩展版
 npm run build:web      # 仅构建网页版
-npm run preview       # 本地预览 dist
-npm run zip           # 生成可分发的扩展 ZIP
+npm run preview        # 本地预览 dist
+npm run zip            # 生成可分发的扩展 ZIP
 ```
 
 | 产物 | 位置 |
@@ -84,7 +129,7 @@ npm run zip           # 生成可分发的扩展 ZIP
 
 浏览器扩展安装后全部工具均可离线启动。网页版中已加载的普通工具可断网继续使用；正则测试需能加载站点自带的 Worker 脚本，尚未提供离线缓存 / PWA 安装，需要稳定离线使用时请选择扩展版。上架扩展商店还需准备商店资料并自行提交审核。
 
-## 数据与权限
+## 🔒 数据与权限
 
 - 所有工具逻辑均在浏览器本地执行，无后端、无账号、无分析追踪脚本、无远程代码。
 - 发布版扩展仅申请 `sidePanel` 权限，用于显示浏览器侧边栏；不申请网页读取权限、不注入网页脚本，CSP 使用 `connect-src 'none'` 禁止网络连接。
@@ -93,11 +138,16 @@ npm run zip           # 生成可分发的扩展 ZIP
 - 插件侧边栏和完整工具页共享偏好；独立网站属于不同来源，不自动与扩展同步。
 - 剪贴板访问失败时会显示提示，可手动选中结果复制。
 
+<details>
+<summary><b>展开查看：输入规模与安全限制</b></summary>
+
 单次 JSON / 编解码输入最多 50 万字符；JSON 最多 200 层嵌套，树形 / 查询最多 2 万节点、80 层和累计 200 万路径字符，树节点分批显示，查询结果最多 100 万字符。文本对比每侧最多 10 万字符、3000 行。Base64 工具面向 UTF-8 文本，不用于查看任意二进制文件。
 
 正则在可终止的独立 Worker 中执行，输入防抖 250ms，1.5 秒超时自动停止并可继续编辑重试。表达式最多 2000 字符、文本最多 10 万字符、替换模板最多 5000 字符、捕获组最多 100 个、替换结果最多 50 万字符。匹配超过 2000 处时仅展示前 2000 处，并禁用替换结果，避免将部分结果误认为完整替换。
 
-## 验证
+</details>
+
+## ✅ 测试与验证
 
 ```sh
 npm test                     # 核心算法和边界测试
@@ -111,7 +161,7 @@ npm run test:ui              # 生产网页版 + 真实未打包扩展交互测�
 
 扩展测试会在临时 Chromium 配置中加载 `.output/chrome-mv3`，通过浏览器调试协议触发真实插件图标动作，验证原生侧栏打开、仅申请 `sidePanel` 权限、同栏编辑与草稿保留、JSON 树与查询、正则 Worker 在 CSP 下离线执行、完整标签页入口、偏好同步、刷新清空输入，以及运行期间无 HTTP 请求。侧栏布局还覆盖 320px 和 520px 宽度。截图和失败跟踪文件位于 `artifacts/`。
 
-## 代码结构
+## 📁 代码结构
 
 ```text
 entrypoints/
@@ -142,4 +192,18 @@ public/icon/          插件图标
 scripts/              图标生成脚本
 ```
 
+## 🤝 参与贡献
+
+欢迎提交 Issue 和 Pull Request。
+
 新增工具时，在 `src/lib/tools.ts` 注册元信息，在 `src/lib/core.ts` 添加独立逻辑，并在 `ToolWorkspace.tsx` 接入工具界面。网页版与扩展版会复用这些改动。
+
+提交前请确保通过：
+
+```sh
+npm run typecheck && npm test
+```
+
+## 📄 开源协议
+
+本项目基于 [MIT License](./LICENSE) 开源。

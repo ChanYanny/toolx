@@ -2,6 +2,22 @@
   "name": "toolx",
   "version": "1.0.0",
   "private": true,
+  "description": "本地优先的开发者工具箱：JSON 格式化、Base64、URL 编解码、时间戳、UUID、文本对比、正则测试。Chrome / Edge 侧边栏扩展 + 独立网页版。",
+  "author": "ChanYanny",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChanYanny/toolx.git"
+  },
+  "keywords": [
+    "developer-tools",
+    "json-formatter",
+    "regex-tester",
+    "browser-extension",
+    "chrome-extension",
+    "wxt",
+    "react"
+  ],
   "type": "module",
   "engines": {
     "node": ">=22"
